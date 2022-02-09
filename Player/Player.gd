@@ -5,7 +5,7 @@ var velocity = Vector2.ZERO
 var rotation_speed = 5.0
 var speed = 5.0
 var max_speed = 400.0
-var health = 1
+var health = 5
 
 var Effects = null
 onready var Explosion = load("res://Effects/Explosion.tscn")
@@ -34,7 +34,6 @@ func _physics_process(_delta):
 			Effects.add_child(bullet)
 
 
-
 func get_input():
 	var to_return = Vector2.ZERO
 	$Exhaust.hide()
@@ -49,7 +48,7 @@ func get_input():
 	if Input.is_action_pressed("right"):
 		rotation_degrees = rotation_degrees + rotation_speed
 	return to_return.rotated(rotation)
-	
+
 func damage(d):
 	health -= d
 	if health <= 0:

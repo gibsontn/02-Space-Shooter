@@ -1,8 +1,7 @@
 extends Control
 
 func _ready():
-	$Label.text = "Thanks for playing! Your final score was " + str(Global.score) + "."
-
+	$Label.text = "You got Zapped in Space! Your final score was " + str(Global.score) + "."
 
 func _on_Play_pressed():
 	Global.reset()
