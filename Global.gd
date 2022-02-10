@@ -35,7 +35,6 @@ func _ready():
 	reset()
 
 func reset():
-	get_tree().paused = false
 	score = 0
 	lives = 5
 	level = -1
