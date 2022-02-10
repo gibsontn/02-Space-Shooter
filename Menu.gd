@@ -20,3 +20,7 @@ func _on_Restart_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
+
+func _on_End_pressed():
+	var _scene = get_tree().change_scene("res://UI/End_Game.tscn")

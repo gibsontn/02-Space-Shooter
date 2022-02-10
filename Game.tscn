@@ -99,9 +99,9 @@ __meta__ = {
 
 [node name="Restart" type="Button" parent="UI/Menu"]
 margin_left = 437.0
-margin_top = 350.0
+margin_top = 415.0
 margin_right = 587.0
-margin_bottom = 400.0
+margin_bottom = 465.0
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,14 +109,22 @@ __meta__ = {
 
 [node name="Quit" type="Button" parent="UI/Menu"]
 margin_left = 437.0
-margin_top = 415.0
+margin_top = 480.0
 margin_right = 587.0
-margin_bottom = 465.0
+margin_bottom = 530.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="End" type="Button" parent="UI/Menu"]
+margin_left = 437.0
+margin_top = 350.0
+margin_right = 587.0
+margin_bottom = 400.0
+text = "End"
+
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_Timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_Restart_pressed"]
 [connection signal="pressed" from="UI/Menu/Quit" to="UI/Menu" method="_on_Quit_pressed"]
+[connection signal="pressed" from="UI/Menu/End" to="UI/Menu" method="_on_End_pressed"]

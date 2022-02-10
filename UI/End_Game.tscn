@@ -25,12 +25,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Message" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 350.0
+text = "You got Zapped in Space!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Play" type="Button" parent="."]
 margin_left = 462.0
 margin_top = 350.0
 margin_right = 562.0
 margin_bottom = 390.0
-text = "Try Again"
+text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,6 +51,9 @@ margin_top = 400.0
 margin_right = 562.0
 margin_bottom = 440.0
 text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
