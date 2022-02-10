@@ -65,4 +65,4 @@ func damage(d):
 
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
-		damage(10)
+		damage(5)
