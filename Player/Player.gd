@@ -42,7 +42,6 @@ func get_input():
 		$Exhaust.show()
 	if Input.is_action_pressed("backward"):
 		to_return.y += 1
-		$Exhaust.show()
 	if Input.is_action_pressed("left"):
 		rotation_degrees = rotation_degrees - rotation_speed
 	if Input.is_action_pressed("right"):

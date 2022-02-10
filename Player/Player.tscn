@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Player.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Exhaust.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Orangeship.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fire Bolt3.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 
 [node name="Player" type="KinematicBody2D"]
@@ -12,21 +12,25 @@ __meta__ = {
 }
 
 [node name="Exhaust" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, 40 )
+position = Vector2( -1.50001, 27 )
+scale = Vector2( 0.1925, 0.071875 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.52588e-05, -0.500014 )
-scale = Vector2( 1.09375, 1.07813 )
+position = Vector2( 1.4782e-05, -3.57628e-06 )
+scale = Vector2( 0.71875, 0.75 )
 texture = ExtResource( 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 17.9, 28, 13.6, 28, -0.700001, 21.7, -19, 29, -19, 25.9, -28, 17.9, -28, 14.4, -3, -25.6, -3, -29.2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( 0, -32, 34, 17, 17, 31, 0, 22, -16, 32, -30, 16 )
+position = Vector2( -3.8147e-06, 0.445534 )
+scale = Vector2( 1, 0.991071 )
+polygon = PoolVector2Array( 0, -37.7829, 8.99997, -20.6297, 31, 31.8387, 19, 27.8027, 0, 18, -15, 26, -30, 30.8297 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 8.58307e-06, 1.90735e-06 )
+scale = Vector2( 0.875, 0.90625 )
+polygon = PoolVector2Array( -1.14288, -37.5172, 6.85712, -26.4828, 28.5714, 20.9655, 32, 32, 21.7143, 30.8965, 0, 20.9655, -20.5714, 29.7931, -32, 32, -29.7143, 22.069, -2.28571, -35.3103, -2.28571, -35.3103 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
