@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/gamebackground.jpg" type="Texture" id=3]
-[ext_resource path="res://Asteroid/Asteroid.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
 [ext_resource path="res://Asteroid/Asteroid_Container.gd" type="Script" id=7]
 [ext_resource path="res://UI/Level.gd" type="Script" id=8]
@@ -14,10 +12,21 @@
 [node name="Game" type="Node2D"]
 script = ExtResource( 9 )
 __meta__ = {
+"_edit_horizontal_guides_": [ 68.0 ],
 "_editor_description_": "The root of the scene"
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Background" type="Sprite" parent="."]
+visible = false
 position = Vector2( 512.5, 325 )
 scale = Vector2( 0.644375, 0.58 )
 texture = ExtResource( 3 )
@@ -28,24 +37,16 @@ script = ExtResource( 6 )
 [node name="Asteroid_Container" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
-[node name="Asteroid" parent="Asteroid_Container" instance=ExtResource( 4 )]
-position = Vector2( 100, 100 )
-
-[node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource( 4 )]
-position = Vector2( 800, 500 )
-
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="Enemy_Container" type="Node2D" parent="."]
 script = ExtResource( 10 )
 
-[node name="Enemy" parent="Enemy_Container" instance=ExtResource( 5 )]
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Control" parent="UI"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,8 +54,7 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="UI/HUD"]
 anchor_right = 1.0
-margin_right = 984.0
-margin_bottom = 20.0
+margin_bottom = 40.0
 color = Color( 0, 0, 0, 0.392157 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,9 +81,10 @@ __meta__ = {
 }
 
 [node name="Lives" type="Label" parent="UI/HUD"]
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 984.0
+margin_left = -200.0
+margin_bottom = 100.0
 align = 2
 
 [node name="Menu" type="Control" parent="UI"]

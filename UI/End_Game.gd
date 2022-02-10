@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$Label.text = "Your final score was " + str(Global.score) + "."
+	get_tree().paused = false
 
 
 func _on_Play_pressed():
