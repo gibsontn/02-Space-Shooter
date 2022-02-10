@@ -22,3 +22,4 @@ func _on_Quit_pressed():
 
 func _on_End_pressed():
 	var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
+	queue_free()

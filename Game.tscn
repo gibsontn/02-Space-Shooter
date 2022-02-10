@@ -88,8 +88,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/Menu"]
+margin_top = 85.0
 margin_right = 1024.0
-margin_bottom = 400.0
+margin_bottom = 285.0
 text = "PAUSED"
 align = 1
 valign = 1
