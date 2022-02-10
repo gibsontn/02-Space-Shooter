@@ -23,7 +23,7 @@ var levels = [
 		"timer":80,
 		"asteroids_spawned":false,
 		"enemies_spawned":false
-	},
+	}
 ]
 
 
