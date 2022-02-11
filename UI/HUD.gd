@@ -12,3 +12,4 @@ func update_score():
 func update_lives():
 	$Lives.text = "Lives: " + str(Global.lives)
 
+
