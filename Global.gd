@@ -34,6 +34,14 @@ func _ready():
 	var _signal = get_tree().get_root().connect("size_changed", self, "_resize")
 	reset()
 
+func _physics_process(_delta):
+	var A = get_node_or_null("/root/Game/Asteroid_Container")
+	var E = get_node_or_null("/root/Game/Enemy_Container")
+	if A != null and E != null:
+		var L = levels[level]
+		if L["asteroids_spawned"] and A.get_child_count() == 0 and L["enemies_spawned"] and E.get_child_count() == 0:
+			next_level()
+
 func reset():
 	score = 0
 	lives = 5
@@ -61,8 +69,9 @@ func update_lives(l):
 
 func next_level():
 	level += 1 
-	if level > levels.size():
+	if level >= levels.size():
 		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
-	var Level_Label = get_node_or_null("/root/Game/UI/Level")
-	if Level_Label != null:
-		Level_Label.show_labels()
+	else:
+		var Level_Label = get_node_or_null("/root/Game/UI/Level")
+		if Level_Label != null:
+			Level_Label.show_labels()
