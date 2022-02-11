@@ -99,6 +99,7 @@ func _on_Shield_area_entered(area):
 		shields -= area.damage
 		area.queue_free()
 
-func _on_Shield_body_entered(_body):
-	pass
-		
+func _on_Shield_body_entered(body):
+	if body != self and not body.is_in_group("friendly") and body.has_method("damage") and shields >= 0:
+		shields -= 100
+		body.damage(100)
