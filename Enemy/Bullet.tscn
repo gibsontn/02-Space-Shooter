@@ -4,8 +4,6 @@
 [ext_resource path="res://Enemy/Bullet.gd" type="Script" id=2]
 
 [node name="Bullet" type="Area2D"]
-collision_layer = 0
-collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -19,6 +17,7 @@ scale = Vector2( 0.3875, 0.3875 )
 polygon = PoolVector2Array( -106, -105.9, -92, -92.9, -92, -70, -94.3, -70, -96, -68.9, -96, -62, -98.3, -62, -100, -60.9, -100, -54, -102.1, -54, -111.1, -44, -116.8, -44, -128, -55.2, -128, -61.3, -136, -71.3, -136, -94, -133.8, -94, -122, -105.8, -122, -108, -106, -108 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
