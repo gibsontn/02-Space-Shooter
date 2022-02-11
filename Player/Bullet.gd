@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 var velocity = Vector2.ZERO
 var speed = 500.0
@@ -11,13 +11,13 @@ func _ready():
 	velocity = Vector2(0,-speed).rotated(rotation)
 
 func _physics_process(_delta):
-	velocity = move_and_slide(velocity, Vector2.ZERO)
+	velocity = Vector2.ZERO
 	position.x = wrapf(position.x, 0, Global.VP.x)
 	position.y = wrapf(position.y, 0, Global.VP.y)
 	
 
 
-func _on_Area2D_body_entered(body):
+func _on_Bullet_body_entered(body):
 	if body.has_method("damage"):
 		body.damage(damage)
 	Effects = get_node_or_null("/root/Game/Effects")
@@ -30,3 +30,5 @@ func _on_Area2D_body_entered(body):
 
 func _on_Timer_timeout():
 	queue_free()
+
+

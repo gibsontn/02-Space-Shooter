@@ -99,6 +99,6 @@ func _on_Shield_area_entered(area):
 		shields -= area.damage
 		area.queue_free()
 
-func _on_Shield_body_entered(body):
+func _on_Shield_body_entered(_body):
 	pass
 		

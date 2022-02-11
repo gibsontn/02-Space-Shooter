@@ -57,7 +57,8 @@ var levels = [
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	randomize()
-	VP = get_viewport().size
+	#VP = get_viewport().size
+	VP = Vector2(1600,1200)
 	var _signal = get_tree().get_root().connect("size_changed", self, "_resize")
 	reset()
 
@@ -78,7 +79,8 @@ func reset():
 		l["enemies_spawned"] = false
 
 func _resize():
-	VP = get_viewport().size
+	#VP = get_viewport().size
+	pass
 
 func update_score(s):
 	score += s
