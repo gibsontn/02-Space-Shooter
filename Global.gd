@@ -4,6 +4,7 @@ var VP = Vector2.ZERO
 var score = 0
 var lives = 5
 var level = -1
+var Player = null
 
 var levels = [
 	{

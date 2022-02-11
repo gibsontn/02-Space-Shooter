@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Shiporange.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Shipgreen.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Shipyellow.png" type="Texture" id=3]
+[ext_resource path="res://UI/Selector.gd" type="Script" id=4]
+
+[node name="Selector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Select your Ship!"
+align = 1
+valign = 1
+
+[node name="Shiporange" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 100.0
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shipgreen" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -100.0
+margin_right = 50.0
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+
+[node name="Shipyellow" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -100.0
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 3
+
+[connection signal="pressed" from="Shiporange" to="." method="_on_Shiporange_pressed"]
+[connection signal="pressed" from="Shipgreen" to="." method="_on_Shipgreen_pressed"]
+[connection signal="pressed" from="Shipyellow" to="." method="_on_Shipyellow_pressed"]

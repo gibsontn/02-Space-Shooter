@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player/Shipgreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Exhaust.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Shipgreen.png" type="Texture" id=3]
+[ext_resource path="res://Assets/shield3.png" type="Texture" id=4]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+direction = Vector3( 0, 50, 0 )
+spread = 15.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.25
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 2 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 74.027
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 512, 300 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Exhaust" type="Sprite" parent="."]
+position = Vector2( -1.50001, 27 )
+scale = Vector2( 0.1925, 0.071875 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="Exhaust"]
+position = Vector2( -2.59741, -13.9131 )
+lifetime = 0.75
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.4782e-05, -3.57628e-06 )
+scale = Vector2( 0.71875, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.71875, 0.75 )
+polygon = PoolVector2Array( 18, -30, 32, 24, 32, 32, 18.4, 32, -0.799999, 24.6, -18.7, 32, -32, 32, -32, 18.7, -18, -30, -18, -32, -9, -32, 0.299999, -24.1, 8.2, -32, 18, -32 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -14, -24, -15, -22, -12, -25, -6, -26, 0, -21, 6, -26, 15, -24, 25, 22, 23, 26, 1, 18, -25, 26, -25, 17, -14, -25, -12, -25 )
+
+[node name="Shield" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Shield"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield"]
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1600
+limit_bottom = 1200
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Shield" to="." method="_on_Shield_area_entered"]
+[connection signal="body_entered" from="Shield" to="." method="_on_Shield_body_entered"]

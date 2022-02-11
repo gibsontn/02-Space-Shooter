@@ -1,9 +1,8 @@
 extends Node2D
 
-onready var Player = load("res://Player/Player.tscn")
 
 func _physics_process(_delta):
-	if get_child_count() == 0:
-		var player = Player.instance()
+	if get_child_count() == 0 and Global.Player != null:
+		var player = Global.Player.instance()
 		player.position = Vector2(Global.VP.x/2,Global.VP.y/2)
 		add_child(player)
