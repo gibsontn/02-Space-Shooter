@@ -1,7 +1,7 @@
 [gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Effects/Explosion.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Tile.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Explosions.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4

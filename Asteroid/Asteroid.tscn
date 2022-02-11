@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Asteroid-A-09-007.png" type="Texture" id=1]
+[ext_resource path="res://Assets/AsteroidBig.png" type="Texture" id=1]
 [ext_resource path="res://Asteroid/Asteroid.gd" type="Script" id=2]
 
 [node name="Asteroid" type="KinematicBody2D"]
