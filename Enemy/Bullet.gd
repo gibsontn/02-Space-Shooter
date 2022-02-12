@@ -16,7 +16,7 @@ func _physics_process(delta):
 
 
 func _on_Bullet_body_entered(body):
-	if body.name != "Enemy":
+	if body.name != "Enemy" and "Boss":
 		if body.has_method("damage"):
 			body.damage(damage)
 		Effects = get_node_or_null("/root/Game/Effects")

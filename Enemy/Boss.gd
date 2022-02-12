@@ -6,7 +6,7 @@ var direction = Vector2(1.5,0)
 var wobble = 30.0
 
 
-var health = 3
+var health = 7
 
 var Effects = null
 onready var Bullet = load("res://Enemy/Bullet.tscn")
@@ -22,6 +22,11 @@ func _physics_process(_delta):
 	position.y = initial_position.y + sin(position.x/20)*wobble
 	position.x = wrapf(position.x, 0, Global.VP.x)
 	position.y = wrapf(position.y, 0, Global.VP.y)
+	var Player = get_node_or_null("/root/Game/Player_Container/Player")
+	var Boss = get_node_or_null("/root/Game/Enemy_Container/Boss")
+	var d = global_position.angle_to_point(Player.global_position) - PI/2
+	Boss.global_position = global_position + Vector2(0,-40).rotated(d)
+	Boss.rotation = d
 
 func damage(d):
 	health -= d
@@ -51,3 +56,4 @@ func _on_Timer_timeout():
 		bullet.global_position = global_position + Vector2(0,-40).rotated(d)
 		Effects.add_child(bullet)
 	
+
