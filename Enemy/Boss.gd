@@ -55,5 +55,4 @@ func _on_Timer_timeout():
 		bullet.rotation = d
 		bullet.global_position = global_position + Vector2(0,-40).rotated(d)
 		Effects.add_child(bullet)
-	
 
