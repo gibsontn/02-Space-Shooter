@@ -77,8 +77,6 @@ func get_input():
 func damage(d):
 	health -= d
 	if health <= 0:
-		Global.update_lives(-1)
-		Global.update_score(-50)
 		Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
 			var explosion = Explosion.instance()
@@ -86,6 +84,8 @@ func damage(d):
 			explosion.global_position = global_position
 			hide()
 			yield(explosion, "animation_finished")
+		Global.update_lives(-1)
+		Global.update_score(-50)
 		queue_free()
 
 func _on_Area2D_body_entered(body):
