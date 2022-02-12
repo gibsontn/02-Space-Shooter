@@ -3,7 +3,7 @@ extends KinematicBody2D
 var y_positions = [100,150,200,500,550]
 var initial_position = Vector2.ZERO
 var direction = Vector2(1.5,0)
-var wobble = 30.0
+
 
 
 var health = 7
@@ -19,7 +19,7 @@ func _ready():
 
 func _physics_process(_delta):
 	position += direction
-	position.y = initial_position.y + sin(position.x/20)*wobble
+	position.y = initial_position.y + sin(position.x/20)
 	position.x = wrapf(position.x, 0, Global.VP.x)
 	position.y = wrapf(position.y, 0, Global.VP.y)
 	var Player = get_node_or_null("/root/Game/Player_Container/Player")
