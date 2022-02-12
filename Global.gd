@@ -43,8 +43,8 @@ var levels = [
 	{
 		"title":"Level 4",
 		"subtitle":"Destroy the asteroids and watch out for the enemy",
-		"asteroids":[Vector2(100,100),Vector2(900,500),Vector2(800,200)],
-		"enemies":[Vector2(150,500)],
+		"asteroids":[Vector2(100,100),Vector2(900,400),Vector2(800,200)],
+		"enemies":[Vector2(50,300),Vector2(700,1300)],
 		"bosses":[],
 		"timer":80,
 		"asteroids_spawned":false,
@@ -56,7 +56,7 @@ var levels = [
 		"subtitle":"Destroy the asteroids and watch out for the enemies",
 		"asteroids":[Vector2(100,100),Vector2(900,500),Vector2(800,200)],
 		"enemies":[],
-		"bosses":[600,200],
+		"bosses":[Vector2(200,200)],
 		"timer":60,
 		"asteroids_spawned":false,
 		"enemies_spawned":false,
@@ -84,7 +84,7 @@ func _physics_process(_delta):
 func reset():
 	score = 0
 	lives = 5
-	level = -1
+	level = 2
 	for l in levels:
 		l["asteroid_spawned"] =  false
 		l["enemies_spawned"] = false

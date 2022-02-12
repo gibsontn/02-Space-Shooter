@@ -17,6 +17,6 @@ func _physics_process(_delta):
 		if not level["bosses_spawned"]:
 			for pos in level["bosses"]:
 				var boss = Boss.instance()
-				boss.position = Vector2(600,200)
+				boss.position = Vector2(200,200)
 				add_child(boss)
 			level["bosses_spawned"] = true

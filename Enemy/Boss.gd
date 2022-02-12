@@ -5,7 +5,6 @@ var initial_position = Vector2.ZERO
 var direction = Vector2(1.5,0)
 
 
-
 var health = 7
 
 var Effects = null
