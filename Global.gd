@@ -15,7 +15,8 @@ var levels = [
 		"bosses":[],
 		"timer":100,
 		"asteroids_spawned":false,
-		"enemies_spawned":false
+		"enemies_spawned":false,
+		"bosses_spawned":false
 	},
 	{
 		"title":"Level 2",
@@ -25,7 +26,8 @@ var levels = [
 		"bosses":[],
 		"timer":100,
 		"asteroids_spawned":false,
-		"enemies_spawned":false
+		"enemies_spawned":false,
+		"bosses_spawned":false
 	},
 	{
 		"title":"Level 3",
@@ -35,7 +37,8 @@ var levels = [
 		"bosses":[],
 		"timer":80,
 		"asteroids_spawned":false,
-		"enemies_spawned":false
+		"enemies_spawned":false,
+		"bosses_spawned":false
 	},
 	{
 		"title":"Level 4",
@@ -45,7 +48,8 @@ var levels = [
 		"bosses":[],
 		"timer":80,
 		"asteroids_spawned":false,
-		"enemies_spawned":false
+		"enemies_spawned":false,
+		"bosses_spawned":false
 	},
 	{
 		"title":"Level 5",
@@ -55,7 +59,8 @@ var levels = [
 		"bosses":[600,200],
 		"timer":60,
 		"asteroids_spawned":false,
-		"enemies_spawned":false
+		"enemies_spawned":false,
+		"bosses_spawned":false
 	}
 ]
 

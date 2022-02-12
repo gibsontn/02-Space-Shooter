@@ -25,8 +25,8 @@ func _physics_process(_delta):
 	var Player = get_node_or_null("/root/Game/Player_Container/Player")
 	var Boss = get_node_or_null("/root/Game/Enemy_Container/Boss")
 	var d = global_position.angle_to_point(Player.global_position) - PI/2
-	Boss.global_position = global_position + Vector2(0,-40).rotated(d)
 	Boss.rotation = d
+	Boss.global_position = global_position + Vector2(0,-40).rotated(d)
 
 func damage(d):
 	health -= d
