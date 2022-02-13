@@ -6,7 +6,10 @@ var rotation_speed = 4.0
 var speed = 4.0
 var max_speed = 350.0
 
-var health = 10
+var health = 7
+
+var buffs = 0
+
 var shields = 0
 var shield_regen = 0.01
 var shield_max = 50.0
@@ -20,7 +23,6 @@ var shield_textures = [
 var Effects = null
 onready var Explosion = load("res://Effects/Explosion.tscn")
 
-onready var Bullet = load("res://Player/Bullet.tscn")
 var nose = Vector2(0,-60)
 
 
@@ -51,14 +53,24 @@ func _physics_process(_delta):
 		$Shield.hide()
 
 
-	if Input.is_action_just_pressed("shoot"):
-		Effects = get_node_or_null("/root/Game/Effects")
-		if Effects != null:
-			var bullet = Bullet.instance()
-			bullet.global_position = global_position + nose.rotated(rotation)
-			bullet.rotation = rotation
-			Effects.add_child(bullet)
+func buff_red():
+	for w in $Primary.get_children():
+		var t = w.get_node_or_null("Timer")
+		if t != null:
+			t.wait_time *= 0.9
 
+func buff_green():
+	if not $Primary.find_node("Shotgun"):
+		for w in $Primary.get_children():
+			w.queue_free()
+		var Shotgun = load("res://Weapons/Shotgun.tscn")
+		var s = Shotgun.instance()
+		$Primary.add_child(s)
+	else:
+		for w in $Primary.get_children():
+			var t = w.get_node_or_null("Timer")
+			if t != null:
+				t.wait_time *= 0.9
 
 func get_input():
 	var to_return = Vector2.ZERO
@@ -72,7 +84,21 @@ func get_input():
 		rotation_degrees = rotation_degrees - rotation_speed
 	if Input.is_action_pressed("right"):
 		rotation_degrees = rotation_degrees + rotation_speed
+	if Input.is_action_pressed("shoot"):
+		shoot()
+	if Input.is_action_pressed("shoot_secondary"):
+		shoot_secondary()
 	return to_return.rotated(rotation)
+
+func shoot():
+	for w in $Primary.get_children():
+		if w.has_method("shoot"):
+			w.shoot(rotation, global_position + nose.rotated(rotation))
+
+func shoot_secondary():
+	for w in $Secondary.get_children():
+		if w.has_method("shoot"):
+			w.shoot(rotation, global_position + nose.rotated(rotation))
 
 func damage(d):
 	health -= d

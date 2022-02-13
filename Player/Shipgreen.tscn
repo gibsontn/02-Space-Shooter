@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Shipgreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Exhaust.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Shipgreen.png" type="Texture" id=3]
 [ext_resource path="res://Assets/shield3.png" type="Texture" id=4]
+[ext_resource path="res://Weapons/PewPew.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Weapons/Rocket_Launcher.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
@@ -71,6 +73,14 @@ limit_left = 0
 limit_top = 0
 limit_right = 1600
 limit_bottom = 1200
+
+[node name="Primary" type="Node2D" parent="."]
+
+[node name="PewPew" parent="Primary" instance=ExtResource( 5 )]
+
+[node name="Secondary" type="Node2D" parent="."]
+
+[node name="Rocket_Launcher" parent="Secondary" instance=ExtResource( 6 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Shield" to="." method="_on_Shield_area_entered"]
