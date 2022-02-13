@@ -9,7 +9,7 @@ var Player = null
 var levels = [
 	{
 		"title":"Level 1",
-		"subtitle":"Destroy the asteroids",
+		"subtitle":"Destroy the asteroid!",
 		"asteroids":[Vector2(100,100)],
 		"enemies":[],
 		"bosses":[],
