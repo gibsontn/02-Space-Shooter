@@ -109,7 +109,7 @@ func damage(d):
 			Effects.add_child(explosion)
 			explosion.global_position = global_position
 			hide()
-			yield(explosion, "animation_finished")
+			#yield(explosion, "animation_finished")
 		Global.update_lives(-1)
 		Global.update_score(-50)
 		queue_free()
