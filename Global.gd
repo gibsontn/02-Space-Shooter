@@ -89,7 +89,7 @@ func _physics_process(_delta):
 func reset():
 	score = 0
 	lives = 5
-	level = 3
+	level = -1
 	for l in levels:
 		l["asteroids_spawned"] =  false
 		l["enemies_spawned"] = false
