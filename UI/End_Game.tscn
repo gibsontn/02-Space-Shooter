@@ -16,11 +16,25 @@ position = Vector2( 737.5, 380.5 )
 scale = Vector2( 2.44043, 1.74316 )
 texture = ExtResource( 2 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -115.0
+margin_top = -138.0
+margin_right = 115.0
+margin_bottom = 55.0
+color = Color( 0, 0, 0, 0.313726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Scores" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 300.0
-margin_top = 83.0
+margin_top = 106.0
 margin_right = -300.0
 margin_bottom = -182.0
 align = 1

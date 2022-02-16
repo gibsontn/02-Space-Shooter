@@ -48,6 +48,6 @@ func _on_Timer_timeout():
 		var bullet = Bullet.instance()
 		var d = global_position.angle_to_point(Player.global_position) - PI/2
 		bullet.rotation = d
-		bullet.global_position = global_position + Vector2(0,-40).rotated(d)
+		bullet.global_position = global_position + Vector2(0,-50).rotated(d)
 		Effects.add_child(bullet)
 	
