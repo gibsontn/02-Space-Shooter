@@ -12,7 +12,7 @@ onready var Bullet = load("res://Enemy/Bullet.tscn")
 onready var Explosion = load("res://Effects/Explosion.tscn")
 
 func _ready():
-	initial_position.x = -100
+	initial_position.x = 0
 	initial_position.y = y_positions[randi() % y_positions.size()]
 	position = initial_position
 
@@ -22,10 +22,8 @@ func _physics_process(_delta):
 	position.x = wrapf(position.x, 0, Global.VP.x)
 	position.y = wrapf(position.y, 0, Global.VP.y)
 	var Player = get_node_or_null("/root/Game/Player_Container/Player")
-	var Boss = get_node_or_null("/root/Game/Enemy_Container/Boss")
 	var d = global_position.angle_to_point(Player.global_position) - PI/2
-	Boss.rotation = d
-	Boss.global_position = global_position + Vector2(0,-40).rotated(d)
+	rotation = d
 
 func damage(d):
 	health -= d
@@ -52,6 +50,6 @@ func _on_Timer_timeout():
 		var bullet = Bullet.instance()
 		var d = global_position.angle_to_point(Player.global_position) - PI/2
 		bullet.rotation = d
-		bullet.global_position = global_position + Vector2(0,-40).rotated(d)
+		bullet.global_position = global_position + Vector2(0,-60).rotated(d)
 		Effects.add_child(bullet)
 

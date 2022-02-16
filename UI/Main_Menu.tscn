@@ -48,7 +48,7 @@ Backward = S
 Left = A
 Right = D
 Shoot Weapon = Space
-Shoot Rocket = Control "
+Shoot Rocket = G"
 __meta__ = {
 "_edit_use_anchors_": false
 }
