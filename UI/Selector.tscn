@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Shiporange.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Shipgreen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Shipyellow.png" type="Texture" id=3]
 [ext_resource path="res://UI/Selector.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Starfield-Fast-10sec-Loop_1.ogv" type="VideoStream" id=5]
+[ext_resource path="res://Assets/Orangeshipclicked.png.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Greenshipclicked.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Yellowshipclicked.png" type="Texture" id=8]
 
 [node name="Selector" type="Control"]
 anchor_right = 1.0
@@ -40,6 +43,8 @@ margin_top = -325.0
 margin_right = 341.0
 margin_bottom = -225.0
 texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 expand = true
 stretch_mode = 3
 __meta__ = {
@@ -56,6 +61,8 @@ margin_top = -325.0
 margin_right = 50.0
 margin_bottom = -225.0
 texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
 expand = true
 stretch_mode = 3
 
@@ -69,6 +76,8 @@ margin_top = -325.0
 margin_right = -241.0
 margin_bottom = -225.0
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
 expand = true
 stretch_mode = 3
 
