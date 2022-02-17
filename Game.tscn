@@ -32,9 +32,11 @@ font_data = ExtResource( 5 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 20
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=9]
+size = 18
 font_data = ExtResource( 11 )
 
 [node name="Game" type="Node2D"]
@@ -47,8 +49,8 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1600.0
-margin_bottom = 1200.0
+margin_right = 1902.0
+margin_bottom = 1202.0
 texture = ExtResource( 3 )
 stretch_mode = 1
 __meta__ = {
@@ -127,6 +129,7 @@ __meta__ = {
 
 [node name="Menu" type="Control" parent="UI"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1.0

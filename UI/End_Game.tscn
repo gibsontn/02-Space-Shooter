@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/End_Game.gd" type="Script" id=1]
-[ext_resource path="res://Assets/BackgroundEndGame.png" type="Texture" id=2]
+[ext_resource path="res://Assets/BackgroundEndGame.jpeg" type="Texture" id=2]
 [ext_resource path="res://Assets/kenvector_future.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/kenvector_future_thin.ttf" type="DynamicFontData" id=4]
 
@@ -13,6 +13,12 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 3 )
 
 [node name="End_Game" type="Control"]
@@ -90,6 +96,7 @@ margin_left = -75.0
 margin_top = 130.0
 margin_right = 75.0
 margin_bottom = 180.0
+custom_fonts/font = SubResource( 4 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,6 +111,7 @@ margin_left = -75.0
 margin_top = 195.0
 margin_right = 75.0
 margin_bottom = 245.0
+custom_fonts/font = SubResource( 5 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
