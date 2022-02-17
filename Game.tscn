@@ -1,14 +1,41 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/BackgroundGame.jpg" type="Texture" id=3]
 [ext_resource path="res://Weapons/Buffs_Container.gd" type="Script" id=4]
+[ext_resource path="res://Assets/kenvector_future.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
 [ext_resource path="res://Asteroid/Asteroid_Container.gd" type="Script" id=7]
 [ext_resource path="res://UI/Level.gd" type="Script" id=8]
 [ext_resource path="res://Game.gd" type="Script" id=9]
 [ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=10]
+[ext_resource path="res://Assets/kenvector_future_thin.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 11 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 9 )
@@ -71,27 +98,29 @@ margin_left = 15.0
 margin_top = 13.0
 margin_right = 55.0
 margin_bottom = 27.0
+custom_fonts/font = SubResource( 5 )
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lives" type="Label" parent="UI/HUD"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -215.0
-margin_top = 13.0
-margin_right = -15.0
-margin_bottom = 113.0
-align = 2
-
 [node name="Level" type="Label" parent="UI/HUD"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
+margin_left = -25.0
 margin_top = 13.0
-margin_right = 20.0
-margin_bottom = 27.0
+margin_right = 25.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lives" type="Control" parent="UI/HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -512.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -110,7 +139,8 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -90.0
-margin_bottom = -90.0
+margin_bottom = -291.0
+custom_fonts/font = SubResource( 1 )
 text = "PAUSED"
 align = 1
 valign = 1
@@ -127,6 +157,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="End" type="Button" parent="UI/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.5
+margin_top = 50.0
+margin_right = 74.5
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
+text = "End"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Restart" type="Button" parent="UI/Menu"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -136,6 +181,7 @@ margin_left = -75.5
 margin_top = 115.0
 margin_right = 74.5
 margin_bottom = 165.0
+custom_fonts/font = SubResource( 3 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -150,21 +196,8 @@ margin_left = -75.5
 margin_top = 180.0
 margin_right = 74.5
 margin_bottom = 230.0
+custom_fonts/font = SubResource( 4 )
 text = "Quit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="End" type="Button" parent="UI/Menu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -75.5
-margin_top = 50.0
-margin_right = 74.5
-margin_bottom = 100.0
-text = "End"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -196,6 +229,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -50.0
 margin_bottom = -36.0
+custom_fonts/font = SubResource( 8 )
 align = 1
 valign = 1
 __meta__ = {
@@ -208,6 +242,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = 35.0
 margin_bottom = 49.0
+custom_fonts/font = SubResource( 9 )
 align = 1
 valign = 1
 
@@ -215,7 +250,7 @@ valign = 1
 wait_time = 2.0
 one_shot = true
 
+[connection signal="pressed" from="UI/Menu/End" to="UI/Menu" method="_on_End_pressed"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_Restart_pressed"]
 [connection signal="pressed" from="UI/Menu/Quit" to="UI/Menu" method="_on_Quit_pressed"]
-[connection signal="pressed" from="UI/Menu/End" to="UI/Menu" method="_on_End_pressed"]
 [connection signal="timeout" from="UI/Level/Timer" to="UI/Level" method="_on_Timer_timeout"]

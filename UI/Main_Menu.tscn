@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Starfield-Slow-20sec-Loop.ogv" type="VideoStream" id=2]
+[ext_resource path="res://Assets/kenvector_future_thin.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/kenvector_future.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
 
 [node name="Main_Menu" type="Control"]
 anchor_right = 1.0
@@ -29,6 +45,7 @@ margin_left = -514.0
 margin_top = -350.0
 margin_right = 514.0
 margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
 text = "Zapped in Space"
 align = 1
 valign = 1
@@ -40,9 +57,10 @@ __meta__ = {
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
-margin_top = -115.0
+margin_top = -130.0
 margin_right = 1039.0
-margin_bottom = 485.0
+margin_bottom = 470.0
+custom_fonts/font = SubResource( 4 )
 text = "Forward = W
 Backward = S
 Left = A
@@ -62,6 +80,7 @@ margin_left = -75.0
 margin_top = 50.0
 margin_right = 75.0
 margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,6 +95,7 @@ margin_left = -75.0
 margin_top = 115.0
 margin_right = 75.0
 margin_bottom = 165.0
+custom_fonts/font = SubResource( 3 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false

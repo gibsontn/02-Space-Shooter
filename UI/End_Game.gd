@@ -3,7 +3,7 @@ extends Control
 
 func _ready():
 	Global.add_score()
-	$Label.text = "Your final score was " + str(Global.score) + "."
+	$Label.text = "Your final score was " + str(Global.score)
 	$Scores.text = "High Scores:\n"
 	var count = 0
 	for score in Global.scores:

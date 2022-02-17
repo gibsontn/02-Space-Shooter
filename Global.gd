@@ -110,9 +110,17 @@ func update_lives(l):
 	lives += l
 	if lives <= 0:
 		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
+	
 	var Lives = get_node_or_null("/root/Game/UI/HUD/Lives")
 	if Lives != null:
-		Lives.text = "Lives: " + str(lives)
+		for c in Lives.get_children():
+			c.queue_free()
+		var Life = load("res://UI/Life.tscn")
+		for l in range(lives):
+			var life = Life.instance()
+			var starting = Lives.rect_size.x - (40*(l+1))
+			life.position.x = starting
+			Lives.add_child(life)
 
 func next_level():
 	level += 1 
@@ -122,6 +130,7 @@ func next_level():
 		var Level_Label = get_node_or_null("/root/Game/UI/Level")
 		if Level_Label != null:
 			Level_Label.show_labels()
+
 
 func add_score():
 	var temp = []

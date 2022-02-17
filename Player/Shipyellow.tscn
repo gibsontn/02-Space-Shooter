@@ -35,7 +35,7 @@ __meta__ = {
 }
 
 [node name="Exhaust" type="Sprite" parent="."]
-position = Vector2( -1.50001, 27 )
+position = Vector2( -1.5, 27 )
 scale = Vector2( 0.1925, 0.071875 )
 texture = ExtResource( 2 )
 
@@ -46,13 +46,8 @@ process_material = SubResource( 3 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.4782e-05, -3.57628e-06 )
 scale = Vector2( 0.71875, 0.75 )
 texture = ExtResource( 3 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2( 0.71875, 0.75 )
-polygon = PoolVector2Array( -33.3913, -36, 0, -5.33331, 34.7826, -37.3333, 34.7826, 36, 1.3913, 21.3333, -34.7826, 36 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -83,6 +78,10 @@ limit_bottom = 1200
 [node name="Secondary" type="Node2D" parent="."]
 
 [node name="Rocket_Launcher" parent="Secondary" instance=ExtResource( 6 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.71875, 0.75 )
+polygon = PoolVector2Array( 32, 32, 20.9, 32, -0.799999, 22.7, -21.2, 32, -32, 32, -32, -32, -28.9, -32, 0.400002, -6.2, 26.2, -32, 32, -32 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Shield" to="." method="_on_Shield_area_entered"]
