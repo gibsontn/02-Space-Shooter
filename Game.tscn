@@ -121,7 +121,8 @@ __meta__ = {
 [node name="Lives" type="Control" parent="UI/HUD"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -512.0
+margin_left = -519.0
+margin_right = 11.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false

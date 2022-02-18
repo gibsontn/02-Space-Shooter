@@ -102,6 +102,8 @@ func _resize():
 
 func update_score(s):
 	score += s
+	if score < 0:
+		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
 	var Score = get_node_or_null("/root/Game/UI/HUD/Score")
 	if Score != null:
 		Score.text = "Score: " + str(score)
