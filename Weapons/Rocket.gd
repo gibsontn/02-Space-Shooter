@@ -26,6 +26,7 @@ func _physics_process(delta):
 	position += velocity*delta
 	position.x = wrapf(position.x,0,Global.VP.x)
 	position.y = wrapf(position.y,0,Global.VP.y)
+	
 
 
 func find_target():

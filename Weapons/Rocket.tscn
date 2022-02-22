@@ -15,7 +15,7 @@ rotation = 1.5708
 polygon = PoolVector2Array( 9.5, -14, 9.5, 20, -9.5, 20, -9.5, -10.7, -5.5, -19.4, -5.5, -20, 5.5, -20 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_Rocket_body_entered"]
