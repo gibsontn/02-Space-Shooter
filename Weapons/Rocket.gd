@@ -14,19 +14,22 @@ func _ready():
 
 func _physics_process(delta):
 	if target != null:
-		var dir = wrapf(global_position.direction_to(target.global_position).angle(),-PI,PI)
-		var rot = wrapf(rotation,-PI,PI)
-		var amount = dir - rot
-		if abs(amount) > PI:
-			amount = PI
-		amount = clamp(amount, -turning, turning)
-		if amount != 0:
-			rotation += amount
-			velocity = base_velocity.rotated(rotation)
+		var target_node = get_node_or_null("/root/Game/Enemy_Container/" + target)
+		if target_node == null:
+			target = find_target()
+		else:
+			var dir = wrapf(global_position.direction_to(target_node.global_position).angle(),-PI,PI)
+			var rot = wrapf(rotation,-PI,PI)
+			var amount = dir - rot
+			if abs(amount) > PI:
+				amount = PI
+			amount = clamp(amount, -turning, turning)
+			if amount != 0:
+				rotation += amount
+				velocity = base_velocity.rotated(rotation)
 	position += velocity*delta
 	position.x = wrapf(position.x,0,Global.VP.x)
 	position.y = wrapf(position.y,0,Global.VP.y)
-	
 
 
 func find_target():
@@ -38,7 +41,7 @@ func find_target():
 		for e in Enemies.get_children():
 			var dist = global_position.distance_to(e.global_position)
 			if dist < test_dist:
-				to_return = e
+				to_return = e.name
 				test_dist = dist
 	
 	return to_return
